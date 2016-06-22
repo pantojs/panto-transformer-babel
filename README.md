@@ -6,8 +6,15 @@ Babel transformer for panto.
 ```js
 panto.loadPlugin('babel');
 
-panto.pick('**/*.js').(panto.read()).(panto.babel()).end();
+panto.pick('**/*.js').(panto.read()).(panto.babel({
+    babelOptions: {
+        presets: []
+    }
+})).end();
 ```
+
+## options:
+ - babelOptions: object
 
 [npm-url]: https://npmjs.org/package/panto-transformer-babel
 [downloads-image]: http://img.shields.io/npm/dm/panto-transformer-babel.svg
