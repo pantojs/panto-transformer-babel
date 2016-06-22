@@ -4,9 +4,9 @@
 Babel transformer for panto.
 
 ```js
-panto.loadPlugin('babel');
+panto.loadTransformer('babel');
 
-panto.pick('**/*.js').(panto.read()).(panto.babel({
+panto.pick('**/*.js').pipe(panto.read()).pipe(panto.babel({
     babelOptions: {
         presets: []
     }
