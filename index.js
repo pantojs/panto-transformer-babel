@@ -19,16 +19,25 @@ class BabelTransformer extends Transformer {
             filename,
             content
         } = file;
+
+        const {
+            babelOptions,
+            ignoreError,
+            isSilent
+        } = this.options;
+
         return new Promise((resolve, reject) => {
             try {
-                const result = babel.transform(content, panto.util.extend({}, this.options.babelOptions));
+                const result = babel.transform(content, panto.util.extend({}, babelOptions));
 
                 resolve(panto.util.extend({}, file, {
                     content: result.code
                 }));
             } catch (err) {
-                if (this.options.ignoreError) {
-                    panto.log.warn(`BabelTransform warnning in ${filename}: ${err.message}`);
+                if (ignoreError) {
+                    if (!isSilent) {
+                        panto.log.warn(`BabelTransform warnning in ${filename}: ${err.message}`);
+                    }
                     resolve(file);
                 } else {
                     reject(err);
