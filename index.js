@@ -4,10 +4,11 @@
  *
  * changelog
  * 2016-06-22[10:32:40]:revised
+ * 2016-06-26[12:46:11]:add filename to babel
  *
  * @author yanni4night@gmail.com
- * @version 1.0.0
- * @since 1.0.0
+ * @version 0.1.4
+ * @since 0.1.
  */
 'use strict';
 const Transformer = require('panto-transformer');
@@ -28,7 +29,9 @@ class BabelTransformer extends Transformer {
 
         return new Promise((resolve, reject) => {
             try {
-                const result = babel.transform(content, panto.util.extend({}, babelOptions));
+                const result = babel.transform(content, panto.util.extend({}, babelOptions, {
+                    filename
+                }));
 
                 resolve(panto.util.extend({}, file, {
                     content: result.code
@@ -36,7 +39,7 @@ class BabelTransformer extends Transformer {
             } catch (err) {
                 if (ignoreError) {
                     if (!isSilent) {
-                        panto.log.warn(`BabelTransform warnning in ${filename}: ${err.message}`);
+                        panto.log.warn(`BabelTransform warnning: ${err.message}`);
                     }
                     resolve(file);
                 } else {

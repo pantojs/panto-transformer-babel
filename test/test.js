@@ -16,6 +16,19 @@ const BabelTransformer = require('../');
 
 describe('panto-transformer-babel', () => {
     describe('#transform', () => {
+        it('should skip', done => {
+            const file = {
+                filename: 'a.js',
+                content: 'illegal javascript'
+            };
+            new BabelTransformer({
+                isSkip: '*.js'
+            }).transform(file).then(tfile => {
+                assert.deepEqual(tfile, file);
+            }).then(() => {
+                done();
+            });
+        });
         it('should babel', done => {
             const file = {
                 filename: 'a.js',

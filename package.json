@@ -1,6 +1,6 @@
 {
   "name": "panto-transformer-babel",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Babel transformer for panto",
   "main": "index.js",
   "scripts": {
@@ -26,10 +26,10 @@
   "homepage": "https://github.com/pantojs/panto-transformer-babel",
   "dependencies": {
     "babel-core": "^6.10.4",
-    "panto-transformer": "^0.1.3"
+    "panto-transformer": "^0.1.4"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.9.0",
-    "panto": "0.0.6"
+    "panto": "0.0.9"
   }
 }
