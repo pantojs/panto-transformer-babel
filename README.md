@@ -6,13 +6,13 @@
 ```js
 panto.loadTransformer('babel');
 
-panto.pick('**/*.js').pipe(panto.read()).pipe(panto.babel({
+panto.pick('**/*.js').read().babel({
     babelOptions: {
         presets: []
     },
     ignoreError: false,
     isSlient: false
-})).end();
+});
 ```
 
 ## options:
