@@ -7,8 +7,8 @@
  * 2016-06-26[12:46:11]:add filename to babel
  *
  * @author yanni4night@gmail.com
- * @version 0.1.4
- * @since 0.1.
+ * @version 0.1.5
+ * @since 0.1.0
  */
 'use strict';
 const Transformer = require('panto-transformer');
@@ -33,7 +33,7 @@ class BabelTransformer extends Transformer {
                     filename
                 }));
 
-                resolve(panto.util.extend({}, file, {
+                resolve(panto.util.extend(file, {
                     content: result.code
                 }));
             } catch (err) {
