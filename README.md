@@ -27,7 +27,7 @@ panto.pick('**/*.js').read().babel({
 [travis-image]: http://img.shields.io/travis/pantojs/panto-transformer-babel.svg
 [david-dm-url]:https://david-dm.org/pantojs/panto-transformer-babel
 [david-dm-image]:https://david-dm.org/pantojs/panto-transformer-babel.svg
-[david-dm-dev-url]:https://david-dm.org/pantojs/panto-transformer-babel#info=devDependencies
+[david-dm-dev-url]:https://david-dm.org/pantojs/panto-transformer-babel#type=dev
 [david-dm-dev-image]:https://david-dm.org/pantojs/panto-transformer-babel/dev-status.svg
 [coveralls-image]:https://coveralls.io/repos/github/pantojs/panto-transformer-babel/badge.svg?branch=master
 [coveralls-url]:https://coveralls.io/github/pantojs/panto-transformer-babel?branch=master
