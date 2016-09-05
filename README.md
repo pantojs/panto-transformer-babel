@@ -11,14 +11,14 @@ panto.pick('**/*.js').read().babel({
         presets: []
     },
     ignoreError: false,
-    isSlient: false
+    isSilent: false
 });
 ```
 
 ## options:
  - babelOptions: object, see [here](http://babeljs.io/docs/usage/options/)
  - ignoreError: boolean, if fail when error
- - isSlient: boolean, if log warnning message
+ - isSilent: boolean, if log warnning message
 
 [npm-url]: https://npmjs.org/package/panto-transformer-babel
 [downloads-image]: http://img.shields.io/npm/dm/panto-transformer-babel.svg
